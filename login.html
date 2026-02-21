@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jsfiles/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Travello </title>
+</head>
+
+<body>
+
+    <div class="relative h-screen w-screen overflow-hidden p-10  ">
+
+        <video class="absolute top-0 left-0 h-full w-full object-cover blur-sm" autoplay muted loop
+            src="assests\videos\login_bg_vid.mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+
+        <div class="relative z-20 flex flex-col   h-full w-full">
+            <nav>
+                <p class="text-3xl mx-10 font-bold text-red-500 hidden sm:block">Travello</p>
+            </nav>
+            <div class=" h-full flex justify-center ">
+                <div class="h-full p-10 sm:p-20 border rounded-2xl border-red-500 shadow-red-500 w-full sm:w-1/3">
+                    <p class="text-3xl font-bold text-red-500 sm:hidden ">Travello</p>
+                    <p class="text-3xl text-red-500 mt-10 sm:mt-0 ">Welcome Back</p>
+                    <p class="text-white ">We are happy to see you again</p>
+                    <div class="border flex p-1 rounded-full border-white mt-5">
+
+                        <p class="w-1/2 text-center text-white rounded-full p-2 bg-red-500" id="registerToggleBtn"
+                            onclick="handleToggle()">Register</p>
+
+                        <p class="w-1/2 text-center text-white rounded-full p-2" id="loginToggleBtn"
+                            onclick="handleToggle()">Login</p>
+                    </div>
+                    <!-- Register Form (Visible by default) -->
+                    <form id="registerForm" class="flex flex-col gap-5 mt-10 text-white">
+                        <input name="name" placeholder="Enter name" type="text"
+                            class="w-full p-3 rounded-full border border-white bg-transparent">
+                        <input name="email" placeholder="Enter email" type="email"
+                            class="w-full p-3 rounded-full border border-white bg-transparent">
+                        <input name="password" placeholder="Enter password" type="password"
+                            class="w-full p-3 rounded-full border border-white bg-transparent">
+                        <button id="loginBtn" type="submit"
+                            class="bg-red-500 text-white text-sm font-bold p-3 rounded-full">Register</button>
+                    </form>
+
+                    <!-- Login Form (Hidden by default) -->
+                    <form id="loginForm" class="hidden flex flex-col gap-5 mt-10 text-white">
+                        <input name="email" placeholder="Enter email" type="email"
+                            class="w-full p-3 rounded-full border border-white bg-transparent">
+                        <input name="password" placeholder="Enter password" type="password"
+                            class="w-full p-3 rounded-full border border-white bg-transparent">
+                        <div class="flex justify-end">
+                            <p class="text-white text-sm cursor-pointer">Forgot Password?</p>
+                        </div>
+                        <button class="bg-red-500 text-white text-sm font-bold p-3 rounded-full">Login</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="jsfiles\login.js"></script>
+</body>
+
+</html>
