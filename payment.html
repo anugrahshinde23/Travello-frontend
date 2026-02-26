@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="jsfiles/utils.js"></script>
+  </head>
+  <body>
+    <div class="w-full h-screen bg-red-100 gap-20 flex p-10">
+      <div class="w-1/2 h-full flex flex-col gap-1 justify-center items-center">
+        <p class="text-zinc-500 text-2xl">Total Amount</p>
+        <p id="l-amount" class="text-7xl font-bold text-zinc-500">$1000</p>
+      </div>
+      <div class="w-1/2 h-full flex flex-col bg-white rounded-2xl p-20">
+        <p class="text-3xl text-center">Payment</p>
+        <div class="flex flex-col mt-20 gap-10">
+          <div class="flex flex-col gap-5 ">
+            <p class="text-lg  text-zinc-500 w-full">Card id</p>
+            <input
+            id="booking_id"
+              name="booking_id"
+              type="text"
+              class="p-5 bg-zinc-200 rounded-2xl w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-5">
+            <p class="text-lg  text-zinc-500 w-full">Amount</p>
+            <input
+            id="amount"
+              name="amount"
+              type="text"
+              class="p-5 bg-zinc-200 rounded-2xl w-full"
+            />
+          </div>
+          <button id="payBtn" class="bg-red-500 p-5 font-bold text-white cursor-pointer mt-10 hover:bg-red-400 rounded-2xl">Pay</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="jsfiles/payment.js"></script>
+  </body>
+</html>

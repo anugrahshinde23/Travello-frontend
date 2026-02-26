@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="jsfiles/utils.js"></script>
+    
+  </head>
+  <body>
+    <div>
+      <nav
+        class="sticky top-0 z-10 flex justify-between items-center text-white bg-red-500 px-20 py-10"
+      >
+        <div>
+          <p class="text-2xl  font-bold">Travello</p>
+        </div>
+        <div>
+          <ul class="flex gap-10 text-sm font-bold">
+            <li>Buses</li>
+            <li>About us</li>
+            <li>Contact us</li>
+          </ul>
+        </div>
+        <div id="registerOrProfile"></div>
+      </nav>
+      <div class="">
+        <img
+          class="w-full h-70 object-cover grayscale hover:grayscale-0 brightness-50 transition-all duration-300"
+          src="assests\images\bus2.jpg"
+          alt=""
+        />
+      </div>
+
+      <div class="mt-10 flex flex-col gap-10 items-center">
+        <div class="flex gap-5 justify-center">
+          <p class="text-5xl">BOOK</p>
+          <p class="text-5xl font-semibold">TICKET</p>
+          <p class="text-5xl font-semibold">NOW</p>
+        </div>
+        <form id="searchTripForm" class="rounded-2xl shadow-2xl gap-5 shadow-red-500 flex flex-col p-5 w-2/3 bg-white">
+          <div class="flex items-center border border-zinc-400 rounded-2xl overflow-visible">
+            
+            <!-- FROM CITY -->
+            <div class="w-full relative border-r border-zinc-300">
+              <div class="flex items-center px-4 py-5 gap-3">
+                <i class="fa-solid fa-bus-departure text-zinc-400"></i>
+                <input 
+                  id="fromInput"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="From City" 
+                  class="w-full outline-none text-lg"
+                  required
+                />
+              </div>
+              <input type="hidden" name="from_city_id" id="fromCityId">
+              <!-- CUSTOM DROPDOWN -->
+              <div id="fromDropdown" class="absolute left-0 right-0 top-full mt-2 bg-white shadow-2xl rounded-xl max-h-60 overflow-y-auto z-50 hidden border border-zinc-100 transition-all"></div>
+            </div>
+      
+            <!-- TO CITY -->
+            <div class="w-full relative border-r border-zinc-300">
+              <div class="flex items-center px-4 py-5 gap-3">
+                <i class="fa-solid fa-bus-arrival text-zinc-400"></i>
+                <input 
+                  id="toInput"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="To City" 
+                  class="w-full outline-none text-lg"
+                  required
+                />
+              </div>
+              <input type="hidden" name="to_city_id" id="toCityId">
+              <!-- CUSTOM DROPDOWN -->
+              <div id="toDropdown" class="absolute left-0 right-0 top-full mt-2 bg-white shadow-2xl rounded-xl max-h-60 overflow-y-auto z-50 hidden border border-zinc-100 transition-all"></div>
+            </div>
+      
+            <!-- DATE -->
+            <div class="w-full flex items-center px-4 py-5 gap-3">
+              <i class="fa-solid fa-calendar-days text-zinc-400"></i>
+              <input
+                name="date"
+                type="date"
+                class="w-full outline-none text-lg cursor-pointer"
+                required
+              />
+            </div>
+          </div>
+      
+          <div class="w-full flex justify-center">
+            <button
+              class="bg-red-500 w-1/2 p-4 cursor-pointer rounded-2xl font-bold hover:bg-red-600 text-xl text-white shadow-lg shadow-red-200 transition-all active:scale-95"
+              type="submit"
+            >
+              Search Buses
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="showAvailableBuses" class="m-20">
+
+      </div>
+      <div class="h-screen px-20 flex flex-col gap-10">
+        <p class="text-red-500 text-3xl font-bold  mt-20 ">Our Services</p>
+        <div class="grid grid-cols-4 gap-10 text-white font-bold  ">
+          <div class="bg-red-500 p-10 flex flex-col gap-3 rounded-2xl">
+            <p class="text-xl">Bookings</p>
+            <p class="font-semibold text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam molestias rerum eos porro, dolor deleniti dicta est autem nostrum cupiditate unde amet dolores commodi architecto excepturi similique nihil pariatur dolore consequuntur sint voluptatibus quibusdam incidunt optio quia? Eaque distinctio tempora vero quisquam, itaque expedita. Qui neque repudiandae tenetur mollitia praesentium!</p>
+          </div>
+          <div class="bg-red-500 p-10 flex flex-col gap-3 rounded-2xl">
+            <p class="text-xl">Travel</p>
+            <p class="font-semibold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure deserunt eos quos laborum dolore beatae ad maiores consequatur reprehenderit quia labore dignissimos, quibusdam, nihil error porro esse repellendus. Voluptates a in minima voluptate vero, beatae officia eveniet culpa nobis debitis aliquam amet qui at voluptatem aperiam repellat excepturi rerum incidunt?</p>
+          </div>
+          <div class="bg-red-500 p-10 flex flex-col gap-3 rounded-2xl">
+            <p class="text-xl">Payment</p>
+            <p class="font-semibold text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum debitis illo accusantium adipisci deleniti tempore ex optio sunt amet nobis, distinctio eius nulla maiores sed quo! Hic quasi consequuntur rem, tenetur, porro doloremque earum ex inventore sed ratione saepe necessitatibus soluta neque debitis labore ipsa modi praesentium. Eum, culpa ad.</p>
+          </div>
+          <div class="bg-red-500 p-10 flex flex-col gap-3 rounded-2xl">
+            <p class="text-xl">Security</p>
+            <p class="font-semibold text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui odit adipisci vero id modi maxime quibusdam debitis, sequi, expedita quisquam dolorem minima vitae odio! Mollitia eum laudantium sequi tenetur quibusdam voluptatum delectus quidem voluptatem quaerat similique eveniet sunt porro atque voluptates iusto maiores ipsum illum, numquam perferendis inventore labore sed!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="jsfiles/home.js" defer></script>
+  </body>
+</html>
