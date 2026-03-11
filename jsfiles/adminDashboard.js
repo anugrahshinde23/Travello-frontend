@@ -1334,7 +1334,7 @@ const handleGetAllBookings = async () => {
       <td class="px-6 py-4">${b?.payment_id}</td>
     <td class="px-6 py-4">${b?.seats}</td>
     <td class="px-6 py-4">${b?.status}</td>
-    <td class="px-6 py-4 text-center">${b?.price}</td>
+    <td class="px-6 py-4 text-center">${b?.total_price}</td>
     <td class="px-6 py-4 text-center">${b?.ticket_no}</td>
     
    
