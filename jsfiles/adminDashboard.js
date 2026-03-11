@@ -954,6 +954,7 @@ const createTripModal = document.getElementById('createTripModal')
 const trip_content = document.getElementById('trip-content')
 const closeCreateTripModalBtn = document.getElementById('closeCreateTripModalBtn')
 
+
 closeCreateTripModalBtn.addEventListener('click', () => {
   createTripModal.close()
 })
@@ -1273,6 +1274,9 @@ const handleDeleteTrip = async () => {
   }
 }
 
+
+const booking_content = document.getElementById('bookings-content')
+
 const handleGetAllBookings = async () => {
    
   const token = localStorage.getItem('access_token')
@@ -1296,6 +1300,40 @@ const handleGetAllBookings = async () => {
     }else {
       showToast(error.detail)
     }
+
+    booking_content.innerHTML = ""
+
+    const tableShell = `
+  
+    <div class="overflow-x-auto  rounded-lg border border-gray-200 shadow-sm">
+     <table class="w-full border-collapse bg-[#f5f5dc] text-left text-sm text-gray-500">
+       <thead class="bg-red-100">
+         <tr>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Bus</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Date</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900">Arrival</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900 ">Departure</th>
+           <th class="px-6 py-4 font-bold  text-lg text-gray-900 text-center">Price</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900 text-right">Total Seats</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900 text-right">Available Seats</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900 text-right">Action</th>
+         </tr>
+       </thead>
+       <tbody id="booking-table-body" class="divide-y divide-gray-100 border-t border-gray-100">
+         <!-- Rows will be injected here -->
+       </tbody>
+     </table>
+   </div>
+   
+     `;
+
+     booking_content.innerHTML = tableShell
+
+     const tableBody = document.getElementById('booking-table-body')
+
+     result.bookings.forEach((b) => {
+     
+     })
     
   } catch (error) {
     console.log(error);
