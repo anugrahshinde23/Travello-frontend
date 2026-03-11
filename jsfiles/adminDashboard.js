@@ -1309,14 +1309,11 @@ const handleGetAllBookings = async () => {
      <table class="w-full border-collapse bg-[#f5f5dc] text-left text-sm text-gray-500">
        <thead class="bg-red-100">
          <tr>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Bus</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Date</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900">Arrival</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900 ">Departure</th>
-           <th class="px-6 py-4 font-bold  text-lg text-gray-900 text-center">Price</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900 text-right">Total Seats</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900 text-right">Available Seats</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900 text-right">Action</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Payment</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Seats</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900">Status</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900 ">Price</th>
+           <th class="px-6 py-4 font-bold  text-lg text-gray-900 text-center">Ticket No.</th>
          </tr>
        </thead>
        <tbody id="booking-table-body" class="divide-y divide-gray-100 border-t border-gray-100">
@@ -1332,7 +1329,21 @@ const handleGetAllBookings = async () => {
      const tableBody = document.getElementById('booking-table-body')
 
      result.bookings.forEach((b) => {
-     
+      const row = `
+      <tr class="hover:bg-gray-50 transition-colors">
+      <td class="px-6 py-4">${b?.payment_id}</td>
+    <td class="px-6 py-4 font-medium text-gray-900">${
+      new Date(trip?.date).toDateString()
+    }</td>
+    <td class="px-6 py-4">${b?.seats}</td>
+    <td class="px-6 py-4">${b?.status}</td>
+    <td class="px-6 py-4 text-center">${b?.price}</td>
+    <td class="px-6 py-4 text-center">${b?.ticket_no}</td>
+    
+   
+  </tr>
+    `
+    tableBody.insertAdjacentHTML("beforeend", row)
      })
     
   } catch (error) {
