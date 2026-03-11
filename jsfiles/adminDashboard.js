@@ -1331,20 +1331,21 @@ const handleGetAllBookings = async () => {
 
      result.bookings.forEach((b) => {
       const row = `
-      <tr class="hover:bg-gray-50 transition-colors">
-      <td class="px-6 py-4">${b?.user_name}</td>
-      <td class="px-6 py-4">${b?.status}</td>
-    <td class="px-6 py-4">${b?.seats.map((s) => (
-      <p class='text-sm bg-red-100 p-1 rounded-full'>{s}</p>
-    ))}</td>
-    <td class="px-6 py-4 text-center">${b?.total_price}</td>
-    <td class="px-6 py-4 text-center">${b?.ticket_no}</td>
+        <tr class="hover:bg-gray-50 transition-colors">
+          <td class="px-6 py-4">${b?.user_name || 'N/A'}</td>
+          <td class="px-6 py-4">${b?.status || 'Pending'}</td>
+          <td class="px-6 py-4">
+            ${b?.seats ? b.seats.map((s) => `
+              <p class="text-sm bg-red-100 p-1 rounded-full inline-block m-1">${s}</p>
+            `).join("") : ""}
+          </td>
+          <td class="px-6 py-4 text-center">${b?.total_price}</td>
+          <td class="px-6 py-4 text-center">${b?.ticket_no}</td>
+        </tr>
+      `;
+      tableBody.insertAdjacentHTML("beforeend", row);
+    });
     
-   
-  </tr>
-    `
-    tableBody.insertAdjacentHTML("beforeend", row)
-     })
     
   } catch (error) {
     console.log(error);
