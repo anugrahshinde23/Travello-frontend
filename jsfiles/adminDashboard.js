@@ -1312,7 +1312,6 @@ const handleGetAllBookings = async () => {
           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Name</th>
            <th class="px-6 py-4 font-bold text-lg text-gray-900">Status </th>
            <th class="px-6 py-4 font-bold text-lg text-gray-900"> Seats</th>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900">Status</th>
            <th class="px-6 py-4 font-bold text-lg text-gray-900 ">Price</th>
            <th class="px-6 py-4 font-bold  text-lg text-gray-900 text-center">Ticket No.</th>
          </tr>
@@ -1336,7 +1335,7 @@ const handleGetAllBookings = async () => {
           <td class="px-6 py-4">${b?.status || 'Pending'}</td>
           <td class="px-6 py-4">
             ${b?.seats ? b.seats.map((s) => `
-              <p class="text-sm bg-red-100 p-1 rounded-full inline-block m-1">${s}</p>
+              <p class="text-sm bg-green-200 p-1 rounded-full inline-block m-1">${s}</p>
             `).join("") : ""}
           </td>
           <td class="px-6 py-4 text-center">${b?.total_price}</td>
