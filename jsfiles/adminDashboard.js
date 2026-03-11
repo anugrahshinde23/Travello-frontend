@@ -1273,6 +1273,36 @@ const handleDeleteTrip = async () => {
   }
 }
 
+const handleGetAllBookings = async () => {
+   
+  const token = localStorage.getItem('access_token')
+  
+  try {
+
+    const res = await fetch(`${BaseUrl}/booking/get-all-bookings`, {
+      method : 'GET',
+
+      headers : {
+        'Content-Type' : 'application/json',
+        Authorization : `Bearer ${token}`
+      }
+    })
+
+    const result = await res.json()
+
+    if(res.ok){
+      console.log(result);
+      showToast('success', result.message)
+    }else {
+      showToast(error.detail)
+    }
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
 confirmDeleteTripBtn.addEventListener('click', () => {
   handleDeleteTrip()
 })
@@ -1281,3 +1311,4 @@ handleGetAllBuses();
 handleGetAllCities();
 handleGetAllRoutes();
 handleGetAllTrips()
+handleGetAllBookings();
