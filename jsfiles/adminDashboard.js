@@ -1309,7 +1309,8 @@ const handleGetAllBookings = async () => {
      <table class="w-full border-collapse bg-[#f5f5dc] text-left text-sm text-gray-500">
        <thead class="bg-red-100">
          <tr>
-           <th class="px-6 py-4 font-bold text-lg text-gray-900"> Payment</th>
+          <th class="px-6 py-4 font-bold text-lg text-gray-900"> Name</th>
+           <th class="px-6 py-4 font-bold text-lg text-gray-900">Status </th>
            <th class="px-6 py-4 font-bold text-lg text-gray-900"> Seats</th>
            <th class="px-6 py-4 font-bold text-lg text-gray-900">Status</th>
            <th class="px-6 py-4 font-bold text-lg text-gray-900 ">Price</th>
@@ -1331,9 +1332,11 @@ const handleGetAllBookings = async () => {
      result.bookings.forEach((b) => {
       const row = `
       <tr class="hover:bg-gray-50 transition-colors">
-      <td class="px-6 py-4">${b?.payment_id}</td>
-    <td class="px-6 py-4">${b?.seats}</td>
-    <td class="px-6 py-4">${b?.status}</td>
+      <td class="px-6 py-4">${b?.user_name}</td>
+      <td class="px-6 py-4">${b?.status}</td>
+    <td class="px-6 py-4">${b?.seats.map((s) => (
+      <p class='text-sm bg-red-100 p-1 rounded-full'>{s}</p>
+    ))}</td>
     <td class="px-6 py-4 text-center">${b?.total_price}</td>
     <td class="px-6 py-4 text-center">${b?.ticket_no}</td>
     
