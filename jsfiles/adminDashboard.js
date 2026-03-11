@@ -1332,9 +1332,6 @@ const handleGetAllBookings = async () => {
       const row = `
       <tr class="hover:bg-gray-50 transition-colors">
       <td class="px-6 py-4">${b?.payment_id}</td>
-    <td class="px-6 py-4 font-medium text-gray-900">${
-      new Date(trip?.date).toDateString()
-    }</td>
     <td class="px-6 py-4">${b?.seats}</td>
     <td class="px-6 py-4">${b?.status}</td>
     <td class="px-6 py-4 text-center">${b?.price}</td>
@@ -1361,3 +1358,4 @@ handleGetAllCities();
 handleGetAllRoutes();
 handleGetAllTrips()
 handleGetAllBookings();
+     
