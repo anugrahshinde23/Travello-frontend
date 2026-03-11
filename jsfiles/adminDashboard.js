@@ -1358,4 +1358,3 @@ handleGetAllCities();
 handleGetAllRoutes();
 handleGetAllTrips()
 handleGetAllBookings();
-     
