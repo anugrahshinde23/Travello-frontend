@@ -11,7 +11,7 @@ if (role === "admin") {
   window.location.href = "home.html";
 }
 
-const BaseUrl = "http://127.0.0.1:8000";
+const BaseUrl = "https://travello-backend-2rmf.onrender.com";
 
 const urlParams = new URLSearchParams(window.location.search);
 const bookingId = urlParams.get("bookingId");

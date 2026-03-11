@@ -19,7 +19,7 @@ const l_amount = document.getElementById("l-amount");
 
 l_amount.innerText = `Rs.${amount}`;
 
-const BaseUrl = "http://127.0.0.1:8000";
+const BaseUrl = "https://travello-backend-2rmf.onrender.com";
 
 const payBtn = document.getElementById("payBtn");
 const booking_id = document.getElementById("booking_id");

@@ -7,7 +7,7 @@ async function checkAuth(requiredRole = null) {
     }
   
     try {
-      const res = await fetch("http://127.0.0.1:8000/auth/profile", {
+      const res = await fetch("https://travello-backend-2rmf.onrender.com/auth/profile", {
         headers: {
           Authorization: "Bearer " + token,
         },

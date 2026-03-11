@@ -27,7 +27,7 @@ if(token){
 
 
 // --- CONSTANTS ---
-const BaseUrl = "http://127.0.0.1:8000";
+const BaseUrl = "https://travello-backend-2rmf.onrender.com";
 let allCities = [];
 
 // --- 1. FETCH CITIES ---

@@ -82,7 +82,7 @@ myModal.addEventListener("click", (event) => {
 let selectedBusId = null;
 let selectedCityId = null;
 
-const BaseUrl = "http://127.0.0.1:8000";
+const BaseUrl = "https://travello-backend-2rmf.onrender.com";
 
 const registerBusForm = document.getElementById("registerBusForm");
 

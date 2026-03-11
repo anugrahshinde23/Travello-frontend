@@ -16,7 +16,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const tripId = urlParams.get("tripId");
 
 
-const BaseUrl = "http://127.0.0.1:8000";
+const BaseUrl = "https://travello-backend-2rmf.onrender.com";
 const seat_layout = document.getElementById("seat-layout");
 
 let selectedSeats = [];
