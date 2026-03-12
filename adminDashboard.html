@@ -22,13 +22,11 @@
         <div class="bg-white/70 w-1/5 p-10 rounded-2xl ">
             <a href="/frontend/" class="text-2xl text-red-500 cursor-pointer ">Travello</a>
             <ul class="mt-10 flex flex-col gap-5 font-bold">
-                <li class="tab-link cursor-pointer p-2  text-red-500 bg-red-50" onclick="switchTab(event, 'dashboard-content')">Dashboard</li>
                 <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'bus-content')">Buses</li>
                 <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'city-content')">Cities</li>
                 <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'route-content')">Routes</li>
                 <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'trip-content')">Trips</li>
                 <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'bookings-content')">Bookings</li>
-                <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'tickets-content')">Tickets</li>
                 <li class="tab-link cursor-pointer p-2  text-zinc-500 hover:bg-zinc-100" onclick="switchTab(event, 'settings-content')">Settings</li>
             </ul>
         </div>
@@ -45,9 +43,7 @@
                 </div>
             </div>
             <div class="flex-1 bg-white/70 rounded-2xl overflow-auto p-10">
-                <div id="dashboard-content" class="tab-pane">
-                    <h1>Dashboard Content here</h1>
-                </div>
+               
                 <div id="bus-content" class="tab-pane hidden flex flex-col  gap-5">
                     <button id="open-modal" class="w-full border border-red-500 rounded-2xl font-bold text-red-500 p-5 cursor-pointer hover:bg-red-50 text-center">
                         Add Bus 
@@ -398,11 +394,9 @@
                   </div>
                   
                 </dialog>
-                <div id="tickets-content" class="tab-pane hidden">
-                    <h1>Tickets content here</h1>
-                </div>
-                <div id="settings-content" class="tab-pane hidden">
-                    <h1>Settings content here</h1>
+               
+                <div id="settings-content" class="tab-pane hidden justify-between">
+                    <h1>Settings</h1>
                     <button class="bg-red-500 p-2 cursor-pointer text-sm text-white" onclick="logout()">Logout</button>
                 </div>
                 </div>
