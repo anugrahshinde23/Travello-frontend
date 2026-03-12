@@ -50,7 +50,7 @@ downloadBtn.addEventListener('click', async () => {
       
       // 5. Home page par navigation
       setTimeout(() => {
-          window.location.replace('/frontend/') // Apne home route ka URL yahan dalein
+          window.location.replace('/') // Apne home route ka URL yahan dalein
       }, 1500); // Thoda delay taaki toast message dikh sake
 
   } catch (error) {
