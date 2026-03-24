@@ -821,8 +821,8 @@ const handleGetAllRoutes = async () => {
         route?.source_city?.name
       }</td>
       <td class="px-6 py-4">${route?.destination_city?.name}</td>
-      <td class="px-6 py-4">${route?.distance}</td>
-      <td class="px-6 py-4 text-center">${route?.duration}</td>
+      <td class="px-6 py-4">${route?.distance} km</td>
+      <td class="px-6 py-4 text-center">${route?.duration} min</td>
       <td class="px-6 py-4">
         <div class="flex justify-end gap-2">
           <button onclick='openUpdateRouteModalFunction(${JSON.stringify(
