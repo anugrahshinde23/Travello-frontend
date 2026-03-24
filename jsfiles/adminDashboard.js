@@ -1085,7 +1085,7 @@ const token = localStorage.getItem('access_token')
      result.trip_data.forEach((trip) => {
       const row = `
         <tr class="hover:bg-gray-50 transition-colors">
-        <td class="px-6 py-4">${trip?.bus_id}</td>
+        <td class="px-6 py-4">${trip?.bus_details?.name}</td>
       <td class="px-6 py-4 font-medium text-gray-900">${
         new Date(trip?.date).toDateString()
       }</td>
